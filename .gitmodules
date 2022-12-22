@@ -1,0 +1,6 @@
+[submodule "external/etl"]
+	path = external/etl
+	url = https://github.com/ETLCPP/etl.git
+[submodule "external/json"]
+	path = external/json
+	url = https://github.com/nlohmann/json.git
