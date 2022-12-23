@@ -156,5 +156,3 @@
 /home/sam/pico/projects/JubileeWind/build/pico-sdk/docs/CMakeFiles/rebuild_cache.dir
 /home/sam/pico/projects/JubileeWind/build/external/json/CMakeFiles/edit_cache.dir
 /home/sam/pico/projects/JubileeWind/build/external/json/CMakeFiles/rebuild_cache.dir
-/home/sam/pico/projects/JubileeWind/build/external/etl/CMakeFiles/edit_cache.dir
-/home/sam/pico/projects/JubileeWind/build/external/etl/CMakeFiles/rebuild_cache.dir

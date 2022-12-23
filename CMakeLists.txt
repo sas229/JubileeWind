@@ -1,4 +1,4 @@
-# Generated Cmake Pico project file
+# Generated cmake Pico project file.
 cmake_minimum_required(VERSION 3.13)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
@@ -37,8 +37,11 @@ target_sources(${PROJECT} PRIVATE
 target_link_libraries(
     ${PROJECT}
     pico_stdlib
-    etl::etl
+    pico_cyw43_arch_lwip_threadsafe_background
+    json
 )
+
+target_include_directories(JubileeWind PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 # Enable stdio outputs as required.
 pico_enable_stdio_usb(${PROJECT} 0)
@@ -50,8 +53,6 @@ pico_add_extra_outputs(${PROJECT})
 # Add required subdirectories for the libraries required.
 add_subdirectory(external/json)
 message("json library added.")
-add_subdirectory(external/etl)
-message("etl library added.")
 
 
 

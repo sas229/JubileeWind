@@ -310,9 +310,6 @@ ETL_VERSION:STRING=20.35.7
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
-//Build the unit tests when BUILD_TESTING is enabled.
-JSON_BuildTests:BOOL=OFF
-
 //Enable CI build targets.
 JSON_CI:BOOL=OFF
 
@@ -327,9 +324,6 @@ JSON_GlobalUDLs:BOOL=ON
 
 //Enable implicit conversions.
 JSON_ImplicitConversions:BOOL=ON
-
-//Install CMake targets during install step.
-JSON_Install:BOOL=OFF
 
 //Enable legacy discarded value comparison.
 JSON_LegacyDiscardedValueComparison:BOOL=OFF
@@ -356,7 +350,7 @@ NO_STL:BOOL=OFF
 NO_SYSTEM_INCLUDE:BOOL=OFF
 
 //PICO target board (e.g. pico)
-PICO_BOARD:STRING=pico
+PICO_BOARD:STRING=pico_w
 
 //PICO board header directories
 PICO_BOARD_HEADER_DIRS:STRING=
@@ -388,6 +382,9 @@ PICO_OBJCOPY:FILEPATH=/usr/bin/arm-none-eabi-objcopy
 //Path to a program.
 PICO_OBJDUMP:FILEPATH=/usr/bin/arm-none-eabi-objdump
 
+//No help, variable specified on the command line.
+PICO_PASSWORD:UNINITIALIZED=mc%4Mv2b*AwxAx
+
 //PICO Build platform (e.g. rp2040, host)
 PICO_PLATFORM:STRING=rp2040
 
@@ -399,6 +396,9 @@ PICO_SDK_FETCH_FROM_GIT_PATH:FILEPATH=
 
 //Path to the Raspberry Pi Pico SDK
 PICO_SDK_PATH:PATH=/usr/share/pico-sdk
+
+//No help, variable specified on the command line.
+PICO_SSID:UNINITIALIZED=Jubilee
 
 //Globablly enable stdio UART
 PICO_STDIO_UART:BOOL=ON
@@ -581,7 +581,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=76
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=75
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -633,12 +633,18 @@ FAMILY_MCUS:INTERNAL=RP2040
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3.10][cfound components: Interpreter ][v3.10.8()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//Build the unit tests when BUILD_TESTING is enabled.
+JSON_BuildTests:INTERNAL=OFF
+//Install CMake targets during install step.
+JSON_Install:INTERNAL=OFF
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 PICO_BOOT_STAGE2_DIR:INTERNAL=/usr/share/pico-sdk/src/rp2_common/boot_stage2
 PICO_CMAKE_PRELOAD_PLATFORM_DIR:INTERNAL=/usr/share/pico-sdk/cmake/preload/platforms
 PICO_CMAKE_PRELOAD_PLATFORM_FILE:INTERNAL=/usr/share/pico-sdk/cmake/preload/platforms/rp2040.cmake
 PICO_COMPILER_ASM:INTERNAL=/usr/bin/arm-none-eabi-gcc
-PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs
+//Try to add support for PICO_CYW43
+PICO_CYW43_SUPPORTED:INTERNAL=1
+PICO_DOXYGEN_EXCLUDE_PATHS:INTERNAL= /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs /usr/share/pico-sdk/src/rp2_common/cmsis /usr/share/pico-sdk/src/rp2040/hardware_regs
 PICO_DOXYGEN_PATHS:INTERNAL= /usr/share/pico-sdk/src/common /usr/share/pico-sdk/lib/cyw43-driver/src /usr/share/pico-sdk/src/rp2_common /usr/share/pico-sdk/src/rp2040
 PICO_NO_HARDWARE:INTERNAL=0
 PICO_ON_DEVICE:INTERNAL=1
