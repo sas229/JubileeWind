@@ -1,3 +1,0 @@
-[submodule "external/json"]
-	path = external/json
-	url = https://github.com/sas229/json.git
