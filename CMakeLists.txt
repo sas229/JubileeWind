@@ -42,7 +42,7 @@ target_link_libraries(
     json
 )
 
-target_include_directories(JubileeWind PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(JubileeWind PRIVATE ${CMAKE_CURRENT_LIST_DIR}/include)
 
 # Enable stdio outputs as required.
 pico_enable_stdio_usb(${PROJECT} 1)
