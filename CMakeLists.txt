@@ -37,6 +37,7 @@ target_sources(${PROJECT} PRIVATE
 target_link_libraries(
     ${PROJECT}
     pico_stdlib
+    hardware_flash
     pico_cyw43_arch_lwip_threadsafe_background
     json
 )
@@ -44,8 +45,8 @@ target_link_libraries(
 target_include_directories(JubileeWind PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 # Enable stdio outputs as required.
-pico_enable_stdio_usb(${PROJECT} 0)
-pico_enable_stdio_uart(${PROJECT} 1)
+pico_enable_stdio_usb(${PROJECT} 1)
+pico_enable_stdio_uart(${PROJECT} 0)
 
 # Create additional executables.
 pico_add_extra_outputs(${PROJECT})
